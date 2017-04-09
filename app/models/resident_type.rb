@@ -1,0 +1,2 @@
+class ResidentType < ApplicationRecord
+end

@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Resident Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @resident_types.each do |resident_type| %>
+      <tr>
+        <td><%= resident_type.name %></td>
+        <td><%= link_to 'Show', resident_type %></td>
+        <td><%= link_to 'Edit', edit_resident_type_path(resident_type) %></td>
+        <td><%= link_to 'Destroy', resident_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Resident Type', new_resident_type_path %>
