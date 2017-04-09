@@ -18,7 +18,11 @@
 
 $(document).ready(function(){
   $('table').DataTable({
-  	responsive: true
+  	// responsive: true,
+  	dom: 'Bfrtip',
+    buttons: [
+        'copy', 'csv', 'excel', 'pdf', 'print'
+    ]
   });
 
   $('select').select2();
