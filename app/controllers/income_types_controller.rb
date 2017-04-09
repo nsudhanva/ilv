@@ -1,4 +1,5 @@
 class IncomeTypesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_income_type, only: [:show, :edit, :update, :destroy]
 
   # GET /income_types

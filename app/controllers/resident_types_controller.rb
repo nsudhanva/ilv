@@ -1,4 +1,5 @@
 class ResidentTypesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_resident_type, only: [:show, :edit, :update, :destroy]
 
   # GET /resident_types
