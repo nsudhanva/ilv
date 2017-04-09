@@ -12,13 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :expense_type_id %>
-    <%= f.number_field :expense_type_id %>
+    <label>Select Expense Type: </label>
+    <%= f.collection_select :expense_type_id, ExpenseType.all , :id, :name, include_blank: "Select Expense" %> <br><br>
   </div>
 
   <div class="field">
     <%= f.label :amount %>
     <%= f.text_field :amount %>
+  </div>
+
+  <div class="field">
+    <label>Select Payment Type: </label>
+    <%= f.collection_select :payment_type_id, PaymentType.all , :id, :name, include_blank: "Select Payment" %> <br><br>
   </div>
 
   <div class="field">

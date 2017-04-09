@@ -17,8 +17,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :resident_id %>
-    <%= f.number_field :resident_id %>
+    <label>Select Resident: </label>
+    <%= f.collection_select :resident_id, Resident.all , :id, :name, include_blank: "Select Resident" %> <br><br>
   </div>
 
   <div class="field">
@@ -27,13 +27,13 @@
   </div>
 
   <div class="field">
-    <%= f.label :payment_type_id %>
-    <%= f.number_field :payment_type_id %>
+    <label>Select Payment Type: </label>
+    <%= f.collection_select :payment_type_id, PaymentType.all , :id, :name, include_blank: "Select Payment" %> <br><br>
   </div>
 
   <div class="field">
-    <%= f.label :income_type_id %>
-    <%= f.number_field :income_type_id %>
+    <label>Select Income Type: </label>
+    <%= f.collection_select :income_type_id, IncomeType.all , :id, :name, include_blank: "Select Income" %> <br><br>
   </div>
 
   <div class="actions">

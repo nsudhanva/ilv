@@ -22,7 +22,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :family %>
+    <label>Number of people in family</label>
     <%= f.number_field :family %>
   </div>
 
@@ -37,8 +37,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :resident_type_id %>
-    <%= f.number_field :resident_type_id %>
+    <label>Select Resident: </label>
+    <%= f.collection_select :resident_type_id, ResidentType.all , :id, :name, include_blank: "Select Resident Type" %> <br><br>
   </div>
 
   <div class="actions">

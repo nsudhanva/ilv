@@ -31,7 +31,7 @@ $(document).ready(function(){
 	$("input[type=submit]").addClass("btn btn-primary");
  	$("textarea").addClass("form-control");
  	$("div.field").addClass("form-group");
- 	$("form:not(.new_user)").wrap("<div class='form-box col-md-8 col-md-offset-2'></div>");
+ 	$("form:not(.new_user)").wrap("<div class='form-box col-md-8 col-md-offset-3'></div>");
  	$("form.new_user").wrap("<div class='form-box-login col-md-8 col-md-offset-3'></div>");
 
  	$("a:contains('Back')").empty().append("<button class=\"btn btn-primary top-left-corner\" style=\"position: fixed\">Back</button>");

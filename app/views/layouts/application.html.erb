@@ -67,12 +67,24 @@
                 Residents
                 <% end %>
               </li> 
+              <li style="margin-left: 10px">
+                <div class="dropdown navbar-btn">
+                  <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    New
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><%= link_to "New Income", expense_types_path %></li>
+                    <li><%= link_to "New Expense", income_types_path %></li>
+                  </ul>
+                </div>
+              </li> 
             </ul>
 
             <ul class="nav navbar-nav navbar-right">  
               <li>
                 <div class="dropdown navbar-btn">
-                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     Types
                     <span class="caret"></span>
                   </button>
