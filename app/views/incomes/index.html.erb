@@ -20,10 +20,10 @@
     <% @incomes.each do |income| %>
       <tr>
         <td><%= income.amount %></td>
-        <td><%= income.resident_id %></td>
+        <td><%= income.resident.name %></td>
         <td><%= income.date_time %></td>
-        <td><%= income.payment_type_id %></td>
-        <td><%= income.income_type_id %></td>
+        <td><%= income.payment_type.name %></td>
+        <td><%= income.income_type.name %></td>
         <td><%= link_to 'Show', income %></td>
         <td><%= link_to 'Edit', edit_income_path(income) %></td>
         <td><%= link_to 'Destroy', income, method: :delete, data: { confirm: 'Are you sure?' } %></td>

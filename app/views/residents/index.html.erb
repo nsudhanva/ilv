@@ -25,7 +25,7 @@
         <td><%= resident.family %></td>
         <td><%= resident.email %></td>
         <td><%= resident.phone %></td>
-        <td><%= resident.resident_type_id %></td>
+        <td><%= resident.resident_type.name%></td>
         <td><%= link_to 'Show', resident %></td>
         <td><%= link_to 'Edit', edit_resident_path(resident) %></td>
         <td><%= link_to 'Destroy', resident, method: :delete, data: { confirm: 'Are you sure?' } %></td>

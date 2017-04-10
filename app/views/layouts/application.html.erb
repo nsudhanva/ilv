@@ -6,7 +6,7 @@
 
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
-    
+
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js" ></script>
 
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.4/js/dataTables.buttons.min.js"></script>
@@ -85,6 +85,17 @@
                 Residents
                 <% end %>
               </li> 
+
+              <li
+                <% if controller.controller_name == "accounts" %>
+                class="active"
+                <% end %>>
+
+                <%= link_to accounts_path do %>
+                Accounts
+                <% end %>
+              </li>
+
               <li style="margin-left: 10px">
                 <div class="dropdown navbar-btn">
                   <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">

@@ -7,7 +7,7 @@
 
 <p>
   <strong>Resident:</strong>
-  <%= @income.resident_id %>
+  <%= @income.resident.name %>
 </p>
 
 <p>
@@ -17,12 +17,12 @@
 
 <p>
   <strong>Payment type:</strong>
-  <%= @income.payment_type_id %>
+  <%= @income.payment_type.name %>
 </p>
 
 <p>
   <strong>Income type:</strong>
-  <%= @income.income_type_id %>
+  <%= @income.income_type.name %>
 </p>
 
 <%= link_to 'Edit', edit_income_path(@income) %> |

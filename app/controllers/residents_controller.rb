@@ -55,6 +55,7 @@ class ResidentsController < ApplicationController
   # DELETE /residents/1
   # DELETE /residents/1.json
   def destroy
+    binding.pry
     @resident.destroy
     respond_to do |format|
       format.html { redirect_to residents_url, notice: 'Resident was successfully destroyed.' }

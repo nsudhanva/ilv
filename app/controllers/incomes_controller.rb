@@ -26,7 +26,7 @@ class IncomesController < ApplicationController
   # POST /incomes.json
   def create
     @income = Income.new(income_params)
-
+    # binding.pry
     respond_to do |format|
       if @income.save
         format.html { redirect_to @income, notice: 'Income was successfully created.' }

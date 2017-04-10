@@ -27,7 +27,7 @@
 
 <p>
   <strong>Resident type:</strong>
-  <%= @resident.resident_type_id %>
+  <%= @resident.resident_type.name %>
 </p>
 
 <%= link_to 'Edit', edit_resident_path(@resident) %> |

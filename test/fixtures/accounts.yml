@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  balance: 1.5
+  withdraw: 1.5
+  deposit: 1.5
+  trans_for: 1
+  type: 
+  date: 2017-04-10 10:59:44
+
+two:
+  balance: 1.5
+  withdraw: 1.5
+  deposit: 1.5
+  trans_for: 1
+  type: 
+  date: 2017-04-10 10:59:44
