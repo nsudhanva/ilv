@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-md-3">
-    <div class="box">
+    <div class="box" style="background-color: #B71C1C">
       <div class="small-container text-center">
         <div class="row">
           <div class="col-md-12 center">
@@ -9,7 +9,7 @@
           <div class="col-md-12">
             <div class="row">
               <div class="col-md-6 center">
-                <h1></h1>
+                <h1><span class="glyphicons glyphicons-building"></span></h1>
               </div>
               <div class="col-md-6 center">
                 <h1>33</h1>
@@ -21,7 +21,7 @@
     </div>      
 	</div>
   <div class="col-md-3">
-    <div class="box">
+    <div class="box" style="background-color: #880E4F">
       <div class="small-container text-center">
         <div class="row">
           <div class="col-md-12 center">
@@ -30,7 +30,7 @@
           <div class="col-md-12">
             <div class="row">
               <div class="col-md-6 center">
-                <h1>kkk</h1>
+                <h1><span class="glyphicons glyphicons-home"></span></h1>
               </div>
               <div class="col-md-6 center">
                 <h1><%= @total_flats %></h1>
@@ -42,7 +42,7 @@
     </div>      
   </div>
   <div class="col-md-3">
-    <div class="box">
+    <div class="box" style="background-color: #4A148C">
       <div class="small-container text-center">
         <div class="row">
           <div class="col-md-12 center">
@@ -51,7 +51,7 @@
           <div class="col-md-12">
             <div class="row">
               <div class="col-md-6 center">
-                <h1>kkk</h1>
+                <h1><span class="glyphicons glyphicons-old-man"></span></h1>
               </div>
               <div class="col-md-6 center">
                 <h1><%= @owners %></h1>
@@ -63,7 +63,7 @@
     </div>      
   </div>
   <div class="col-md-3">
-    <div class="box">
+    <div class="box" style="background-color: #0D47A1">
       <div class="small-container text-center">
         <div class="row">
           <div class="col-md-12 center">
@@ -72,7 +72,7 @@
           <div class="col-md-12">
             <div class="row">
               <div class="col-md-6 center">
-                <h1>kkk</h1>
+                <h1><span class="glyphicons glyphicons-user-add"></span></h1>
               </div>
               <div class="col-md-6 center">
                 <h1><%= @tenants %></h1>
@@ -87,7 +87,7 @@
 
 <div class="row gap">
   <div class="col-md-3">
-    <div class="box">
+    <div class="box" style="background-color: #01579B">
       <div class="small-container text-center">
         <div class="row">
           <div class="col-md-12 center">
@@ -96,7 +96,7 @@
           <div class="col-md-12">
             <div class="row">
               <div class="col-md-6 center">
-                <h1>kkk</h1>
+                <h1><span class="glyphicons glyphicons-group"></span></h1>
               </div>
               <div class="col-md-6 center">
                 <h1><%= @total_residents %></h1>
@@ -108,7 +108,7 @@
     </div>      
   </div>
   <div class="col-md-3">
-    <div class="box">
+    <div class="box" style="background-color: #006064"> 
       <div class="small-container text-center">
         <div class="row">
           <div class="col-md-12 center">
@@ -126,7 +126,7 @@
     </div>      
   </div>
   <div class="col-md-3">
-    <div class="box">
+    <div class="box" style="background-color: #004D40">
       <div class="small-container text-center">
         <div class="row">
           <div class="col-md-12 center">
@@ -144,7 +144,7 @@
     </div>      
   </div>
   <div class="col-md-3">
-    <div class="box">
+    <div class="box" style="background-color: #1B5E20">
       <div class="small-container text-center">
         <div class="row">
           <div class="col-md-12 center">
@@ -163,9 +163,9 @@
   </div>
 </div> 
 
-<div class="row">
+<div class="row gap">
   <div class="col-md-6">
-    <div class="big-box">
+    <div class="big-box" style="background-color: #C5CAE9">
       <h2>Residents who has paid maintenance this month</h2>
       <ul class="list-group text-center">
       <% @paid_residents.each do |income|%>
@@ -176,12 +176,40 @@
     </div>
   </div>
   <div class="col-md-6">
-    <div class="big-box">
+    <div class="big-box" style="background-color: #BBDEFB">
       <h2>Residents who has not paid maintenance this month</h2>
       <ul class="list-group text-center">
       <% unless @unpaid_residents.nil? || @unpaid_residents == 0 %>
         <% @unpaid_residents.each do |resident|%>
-          <a class="list-group-item" href="<%= resident_path(resident.id) %>" target="_blank"><%= resident.name %></a>
+          <a class="list-group-item" href="<%= resident_path(resident.id) %>" target="_blank"><%= resident.name %>, <%= resident.flat_no %></a>
+        <% end %>
+      <% else %>
+        <a class="list-group-item">None</a>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="big-box" style="background-color: #B3E5FC">
+      <h2>Residents who has paid corpus fund</h2>
+      <ul class="list-group text-center">
+      <% @corpus_fund_paid.each do |income|%>
+      <%# binding.pry %>
+        <a class="list-group-item" href="<%= resident_path(income.resident.id) %>" target="_blank"><%= income.resident.name %>, Amount: <%= income.amount %>, Date: <%= income.date_time.to_date %> by <%= income.payment_type.name %></a>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="big-box" style="background-color: #B2DFDB">
+      <h2>Residents who has not paid corpus fund</h2>
+      <ul class="list-group text-center">
+      <% unless @corpus_fund_unpaid.nil? || @corpus_fund_unpaid == 0 %>
+        <% @corpus_fund_unpaid.each do |resident|%>
+          <a class="list-group-item" href="<%= resident_path(resident.id) %>" target="_blank"><%= resident.name %>, <%= resident.flat_no %></a>
         <% end %>
       <% else %>
         <a class="list-group-item">None</a>

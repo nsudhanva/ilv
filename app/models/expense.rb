@@ -16,7 +16,7 @@ class Expense < ApplicationRecord
 				# binding.pry
 				account.withdraw = self.amount
 				account.balance = account_last.balance - account.withdraw
-				account.date = Date.today
+				account.date = DateTime.now
 				account.trans_for = self.expense_type.name
 				account.trans_type = "Expense"
 				account.save!
@@ -32,7 +32,7 @@ class Expense < ApplicationRecord
 			if account_last.balance >= self.amount
 				account.withdraw = self.amount
 				account.balance = account_last.balance - (account.withdraw - withdraw).abs	
-				account.date = Date.today
+				account.date = DateTime.now
 				account.trans_for = self.expense_type.name
 				account.trans_type = "Expense"
 				account.save!

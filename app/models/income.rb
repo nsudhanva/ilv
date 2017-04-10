@@ -13,9 +13,9 @@ class Income < ApplicationRecord
 			account_last = Account.last
 			account.deposit = self.amount
 			account.balance = account_last.balance + account.deposit
-			account.date = Date.today
+			account.date = DateTime.now
 			account.trans_for = self.income_type.name
-			binding.pry
+			# binding.pry
 			account.trans_type = "Income"
 			account.save!
 		end
@@ -26,7 +26,7 @@ class Income < ApplicationRecord
 			account_last = Account.last
 			account.deposit = self.amount
 			account.balance = account_last.balance + abs(account.deposit - deposit)
-			account.date = Date.today
+			account.date = DateTime.now
 			account.trans_for = self.income_type.name
 			account.trans_type = "Income"
 			account.save!

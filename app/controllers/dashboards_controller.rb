@@ -16,9 +16,22 @@ class DashboardsController < ApplicationController
   	@incomes = Income.all
 
   	@paid_residents = []
-  	
+  	@paid = []
+    @corpus_fund_paid = []
+    @corpus_paid = []
+
   	@incomes.each do |income|
   	  @paid_residents.push(income)
+      @paid.push(income.resident.id)
+
+      if income.income_type.name == "Corpus Fund"
+        @corpus_fund_paid.push(income)
+        @corpus_paid.push(income.resident.id)
+      end
   	end
+
+    @unpaid_residents = Resident.where.not(id: @paid)
+    @corpus_fund_unpaid = Resident.where.not(id: @corpus_paid)
+    # binding.pry
   end
 end
