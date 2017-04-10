@@ -1,3 +1,25 @@
 // Place all the styles related to the Dashboards controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.box{
+	background-color: red;
+	height: 200px;
+	margin: 20px;
+ 	box-shadow: 10px 10px 10px 2px rgba(0, 0, 0, 0.2);
+}
+
+.small-container{
+	padding: 10px;
+}
+
+.center{
+	display:inline-block;
+ 	margin: auto;
+	height: 90px;
+	color: white;
+}
+
+.gap{
+	margin-bottom: 35px;
+}
