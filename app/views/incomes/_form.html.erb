@@ -27,6 +27,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :month %>
+    <%= f.text_field :month %>
+  </div>
+
+  <div class="field">
     <label>Select Payment Type: </label>
     <%= f.collection_select :payment_type_id, PaymentType.all , :id, :name, include_blank: "Select Payment" %> <br><br>
   </div>
