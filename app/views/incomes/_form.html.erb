@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= f.label :month %>
-    <%= f.text_field :month %>
+    <%= f.select :month, ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], include_blank: "Select Month" %>
   </div>
 
   <div class="field">
