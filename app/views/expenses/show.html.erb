@@ -31,5 +31,15 @@
   <%= @expense.date_time %>
 </p>
 
+<p>
+  <strong>Month:</strong>
+  <%= @expense.month %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @expense.description %>
+</p>
+
 <%= link_to 'Edit', edit_expense_path(@expense) %> |
 <%= link_to 'Back', expenses_path %>

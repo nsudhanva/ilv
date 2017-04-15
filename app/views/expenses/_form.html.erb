@@ -39,6 +39,11 @@
     <%= f.select :month, ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], include_blank: "Select Month" %>
   </div>
 
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

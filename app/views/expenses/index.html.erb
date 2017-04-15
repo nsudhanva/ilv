@@ -19,6 +19,8 @@
       <th>Amount</th>
       <th>Payment type</th>
       <th>Date time</th>
+      <th>Month</th>
+      <th>Description</th>
       <th>Show</th>
       <th>Edit</th>
       <th>Destroy</th>
@@ -32,6 +34,8 @@
         <td><%= expense.amount %></td>
         <td><%= expense.payment_type.name %></td>
         <td><%= expense.date_time %></td>
+        <td><%= expense.month %></td>
+        <td><%= expense.description %></td>
         <td><%= link_to 'Show', expense %></td>
         <td><%= link_to 'Edit', edit_expense_path(expense) %></td>
         <td><%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>

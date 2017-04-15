@@ -21,6 +21,8 @@
       <th>Date time</th>
       <th>Payment type</th>
       <th>Income type</th>
+      <th>Month</th>
+      <th>Description</th>
       <th>Show</th>
       <th>Edit</th>
       <th>Destroy</th>
@@ -35,6 +37,8 @@
         <td><%= income.date_time %></td>
         <td><%= income.payment_type.name %></td>
         <td><%= income.income_type.name %></td>
+        <td><%= income.month %></td>
+        <td><%= income.description %></td>
         <td><%= link_to 'Show', income %></td>
         <td><%= link_to 'Edit', edit_income_path(income) %></td>
         <td><%= link_to 'Destroy', income, method: :delete, data: { confirm: 'Are you sure?' } %></td>
