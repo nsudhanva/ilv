@@ -1,14 +1,24 @@
 <%= form_for(resident) do |f| %>
   <% if resident.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(resident.errors.count, "error") %> prohibited this resident from being saved:</h2>
+    <div class="alert">
+      <div class="row">
+        <div class="col s12">
+          <div class="card-panel red">
+            <span class="white-text">         
+              <div id="error_explanation">
+                <h6><%= pluralize(resident.errors.count, "error") %> prohibited this resident from being saved:</h6>
 
-      <ul>
-      <% resident.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+                <ul>
+                <% resident.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>      
   <% end %>
 
   <div class="field">
