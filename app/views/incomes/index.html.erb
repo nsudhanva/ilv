@@ -1,33 +1,14 @@
 <% if alert %>
-  <div class="alert">
-    <div class="row">
-      <div class="col s12">
-        <div class="card-panel red">
-          <span class="white-text">         
-            <div id="error_explanation">
-               <p id="alert"><%= alert %></p>
-            </div>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div> 
+  <div class="alert alert-danger alert-dismissable">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <%= alert %>
+  </div>
 <% end %>
-
 <% if notice %>
-  <div class="alert">
-    <div class="row">
-      <div class="col s12">
-        <div class="card-panel green">
-          <span class="white-text">         
-            <div id="error_explanation">
-               <p id="notice"><%= notice %></p>
-            </div>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div> 
+  <div class="alert alert-success alert-dismissable">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <%= notice %>
+  </div>
 <% end %>
 
 <h1>Incomes</h1>
