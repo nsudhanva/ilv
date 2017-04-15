@@ -47,9 +47,9 @@ $(document).ready(function(){
 	$("a:contains('Sign up')").empty().append("<button class=\"btn btn-primary\">Sign Up</button>").css("color", "white");
 	$("a:contains('Log in')").empty().append("<button class=\"btn btn-primary\">Log In</button>").css("color", "white");
 	
-	var href = $("a[href*='new']").text();
-	$("a[href*='new']").empty();
-	$("a[href*='new']").append("<button class=\"btn btn-success\">" + href + "</button>").css("color", "white");
+	var href = $("a[href*='new']:not(.new-bar)").text();
+	$("a[href*='new']:not(.new-bar)").empty();
+	$("a[href*='new']:not(.new-bar)").append("<button class=\"btn btn-success\">" + href + "</button>").css("color", "white");
 
 	window.setTimeout(function() {
       $(".alert").fadeTo(500, 0).slideUp(500, function(){
