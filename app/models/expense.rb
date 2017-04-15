@@ -2,9 +2,16 @@ class Expense < ApplicationRecord
 	belongs_to :expense_type
 	belongs_to :payment_type
 
+	validates :expense_type_id, presence: true
+	validates :amount, presence: true
+	validates :payment_type_id, presence: true
+	validates :date_time, presence: true
+	validates :month, presence: true
+
 	validate :check_opening_balance
 	after_create :sub_from_account
 	after_update :update_to_account
+
 
 	protected
 

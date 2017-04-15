@@ -3,6 +3,13 @@ class Income < ApplicationRecord
 	belongs_to :income_type
 	belongs_to :payment_type
 
+	validates :amount, presence: true
+	validates :resident_id, presence: true
+	validates :date_time, presence: true
+	validates :payment_type_id, presence: true
+	validates :income_type_id, presence: true
+	validates :month, presence: true
+
 	after_create :add_to_account
 	after_update :update_to_account
 
