@@ -205,10 +205,10 @@
           </thead>
 
           <tbody>
-            <% @unpaid_residents.each do |income|%>
+            <% @unpaid_residents.each do |resident|%>
               <tr>
-                <td><%= income.resident.flat_no %></td>
-                <td><%= income.resident.name %></td>
+                <td><%= resident.flat_no %></td>
+                <td><%= resident.name %></td>
               </tr>
             <% end %>
           </tbody>
