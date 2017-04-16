@@ -29,7 +29,7 @@ class Income < ApplicationRecord
 
 		def update_to_account
 			account = Account.where(trans_for: self.income_type.name, trans_type: "Income")
-			deposit = account.deposit
+			deposit = self.deposit
 			account_last = Account.last
 			account.deposit = self.amount
 			account.balance = account_last.balance + abs(account.deposit - deposit)
