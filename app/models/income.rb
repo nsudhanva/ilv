@@ -28,11 +28,12 @@ class Income < ApplicationRecord
 		end
 
 		def update_to_account
-			account = Account.where(trans_for: self.income_type.name, trans_type: "Income")
-			deposit = self.deposit
+			account = Account.where(trans_for: self.income_type.name, trans_type: "Income").last
+			# binding.pry
+			deposit = account.deposit
 			account_last = Account.last
 			account.deposit = self.amount
-			account.balance = account_last.balance + abs(account.deposit - deposit)
+			account.balance = account_last.balance + (account.deposit - deposit).abs
 			account.date = DateTime.now
 			account.trans_for = self.income_type.name
 			account.trans_type = "Income"
