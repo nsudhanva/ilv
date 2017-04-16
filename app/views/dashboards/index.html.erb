@@ -233,7 +233,7 @@
   </div>
 </div>
 
-<div class="row">
+<!-- <div class="row">
   <div class="col-md-6">
     <div class="big-box" style="background-color: #B3E5FC">
       <h2>Residents who have paid corpus fund</h2>
@@ -249,15 +249,15 @@
         </thead>
 
         <tbody>
-          <% @corpus_fund_paid.each do |income|%>
+          <%# @corpus_fund_paid.each do |income|%>
             <tr>
-              <td><%= income.resident.flat_no %></td>
-              <td><%= income.resident.name %></td>
-              <td><%= income.amount %></td>
-              <td><%= income.date_time.to_date %></td>
-              <td><%= income.payment_type.name %></td>
+              <td><%#= income.resident.flat_no %></td>
+              <td><%#= income.resident.name %></td>
+              <td><%#= income.amount %></td>
+              <td><%#= income.date_time.to_date %></td>
+              <td><%#= income.payment_type.name %></td>
             </tr>
-          <% end %>
+          <%# end %>
         </tbody>
       </table>
     </div>
@@ -274,14 +274,14 @@
           </thead>
 
           <tbody>
-            <% @corpus_fund_unpaid.each do |resident|%>
+            <%# @corpus_fund_unpaid.each do |resident|%>
               <tr>
-                <td><%= resident.name %></td>
-                <td><%= resident.flat_no %></td>
+                <td><%#= resident.name %></td>
+                <td><%#= resident.flat_no %></td>
               </tr>
-            <% end %>
+            <%# end %>
           </tbody>
         </table>
     </div>
   </div>
-</div>
+</div> -->
