@@ -13,21 +13,21 @@ class DashboardsController < ApplicationController
   	@total_incomes = Income.where(date_time: Time.now.beginning_of_month..Time.now.end_of_month).sum(:amount)
   
   	@residents = Resident.all 
-  	@incomes = Income.all
+  	@incomes_month = Income.where(month: Date.today.strftime("%B"))
 
   	@paid_residents = []
   	@paid = []
     @corpus_fund_paid = []
     @corpus_paid = []
 
-  	@incomes.each do |income|
+  	@incomes_month.each do |income|
   	  @paid_residents.push(income)
       @paid.push(income.resident.id)
 
-      if income.income_type.name == "Corpus Fund"
-        @corpus_fund_paid.push(income)
-        @corpus_paid.push(income.resident.id)
-      end
+      # if income.income_type.name == "Corpus Fund"
+      #   @corpus_fund_paid.push(income)
+      #   @corpus_paid.push(income.resident.id)
+      # end
   	end
 
     @unpaid_residents = Resident.where.not(id: @paid)
