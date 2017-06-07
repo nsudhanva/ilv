@@ -33,7 +33,7 @@
     <% @incomes.each do |income| %>
       <tr>
         <td><%= income.amount %></td>
-        <td><%= income.resident.name %></td>
+        <td><%= unless income.resident.name.nil?  %></td>
         <td><%= income.date_time %></td>
         <td><%= income.payment_type.name %></td>
         <td><%= income.income_type.name %></td>
